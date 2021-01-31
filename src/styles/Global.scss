@@ -1,0 +1,79 @@
+/*
+  * Author: Gihan Rangana
+  * Description: You can create and use any sass variables with this file. For example please check App.module.scss
+*/
+
+/* color variables */
+$primary: #4d73f0;
+$secondary: #8a9a5a;
+
+$bodyBg:#222222;
+
+$white: #ffffff;
+
+/* Fonts varaibles */
+$fonts: (
+    "primary": unquote("Poppins,sans-serif"),
+    "heading": unquote("Montserrat,sans-serif"),
+);
+
+$fontSize: (
+    "tiny": 11px,
+    "small": 13px,
+    "normal": 15px,
+    "medium": 18px,
+    "large": 22px,
+    "xl": 24px,
+    "xxl": 28px,
+);
+
+/* mixins */
+
+@mixin headingText($family: "heading", $weight: 500, $size: "medium", $alt: ()) {
+    font-family: map-get($fonts, $family);
+    font-weight: $weight;
+    font-size: map-get($fontSize, $size);
+    line-height: map-get($fontSize, $size) * 1.5;
+
+    @if (map-get($alt, "decoration")) {
+        text-decoration: map-get($alt, "decoration");
+    }
+
+    @if (map-get($alt, "style")) {
+        font-style: map-get($alt, "style");
+    }
+
+    @if (map-get($alt, "color")) {
+        color: map-get($alt, "color");
+    }
+}
+
+@mixin bodyText($family: "primary", $weight: 400, $size: "small", $alt: ()) {
+    font-family: map-get($fonts, $family);
+    font-weight: $weight;
+    font-size: map-get($fontSize, $size);
+    line-height: map-get($fontSize, $size) * 1.5;
+
+    @if (map-get($alt, "decoration")) {
+        text-decoration: map-get($alt, "decoration");
+    }
+
+    @if (map-get($alt, "style")) {
+        font-style: map-get($alt, "style");
+    }
+
+    @if (map-get($alt, "color")) {
+        color: map-get($alt, "color");
+    }
+}
+
+/* breakpoints */
+$mobile-devices: "(max-width:599px)";
+$tab-portrait-up: "(min-width:600px)";
+$tab-portrait-only: "(min-width:600px) and (max-width:960px)";
+$tab-landscape-up: "(min-width:960px)";
+$tab-landscape-only: "(min-width:960px) and (max-width:1200px)";
+$lap-up: "(min-width:1200px)";
+$lap-only: "(min-width:1200px) and (max-width:1660px)";
+$desktop: "(min-width:1660px)";
+$high-res-devices: "(min-width:2560px)";

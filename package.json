@@ -1,0 +1,71 @@
+{
+  "name": "sass-react-app",
+  "version": "1.0.0",
+  "private": false,
+  "main": "./src/index.tsx",
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "dependencies": {
+    "@craco/craco": "^5.6.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "eslint": "^6.2.2",
+    "typescript": "~3.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/redux": "^3.6.0",
+    "@babel/plugin-proposal-export-default-from": "^7.10.4",
+    "node-sass": "^4.14.1",
+    "postcss-scss": "^2.1.1",
+    "babel-plugin-react-css-modules": "^5.2.6",
+    "eslint-plugin-react-app": "^6.2.2"
+  },
+  "description": "Create sass configured react app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SL-CodeBlaster/sass-react-app.git"
+  },
+  "keywords": [
+    "react",
+    "sass",
+    "react-app",
+    "sass-react-app",
+    "scss",
+    "react-scss",
+    "craco-react",
+    "craco",
+    "global-sass-variables",
+    "global-sass",
+    "reactjs"
+  ],
+  "author": "Gihan Rangana <itsmerangana@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SL-CodeBlaster/sass-react-app/issues"
+  },
+  "homepage": "https://github.com/SL-CodeBlaster/sass-react-app#readme"
+}
