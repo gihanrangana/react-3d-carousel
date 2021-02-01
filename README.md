@@ -1,6 +1,6 @@
 # React Sass App
 
-[![npm version](https://badge.fury.io/js/react-mui-datatables.svg)](https://badge.fury.io/js/react-mui-datatables)
+[![npm version](https://badge.fury.io/js/create-sass-react-app.svg)](https://badge.fury.io/js/create-sass-react-app)
 
 This is SASS configured react app for global variables. you can use any SASS functions,variables,mixins anywhere on your project without importing.
 
