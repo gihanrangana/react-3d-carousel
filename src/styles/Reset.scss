@@ -1,0 +1,121 @@
+:root {
+    --mdc-theme-primary: #{$primary};
+    --mdc-theme-secondary: #{$secondary};
+}
+
+* {
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a img {
+    border: 0;
+}
+
+img {
+    vertical-align: top;
+    image-rendering: -webkit-optimize-contrast;
+    height: 100%;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+    vertical-align: top;
+}
+
+td th {
+    vertical-align: top;
+}
+
+a,
+ins {
+    text-decoration: none;
+    color: inherit;
+}
+
+hr {
+    clear: both;
+    border: 1px solid $light3;
+    border-width: 1px 0 0 0;
+    margin: 1em 0;
+}
+
+button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea,
+input {
+    outline: none;
+}
+
+sup,
+sub {
+    font-size: 80%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: map-get($fonts, "primary");
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 13px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+@media #{$laptop-up} {
+
+    body,
+    html {
+        font-size: 14px;
+    }
+
+}
+
+@media #{$desktop-up} {
+
+    body,
+    html {
+        font-size: 14px;
+    }
+
+}

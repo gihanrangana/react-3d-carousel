@@ -1,10 +1,12 @@
 const CSS_MODULE_LOCAL_IDENT_NAME = process.env.REACT_APP_ENV === "production" ? "_[hash:base64:5]" : "[local]_[hash:base64:5]";
 const {ESLINT_MODES} = require('@craco/craco');
+const fastRefreshCracoPlugin = require('craco-fast-refresh');
 const path = require("path");
 const fs = require("fs");
 
 module.exports = function ({env}) {
     return {
+        plugins: [{ plugin: fastRefreshCracoPlugin }],
         eslint: {
             mode: ESLINT_MODES.file,
         },
@@ -45,17 +47,17 @@ module.exports = function ({env}) {
                 localIdentName: CSS_MODULE_LOCAL_IDENT_NAME
             },
             sass: {
-                loaderOptions: (sassLoaderOptions, {env, paths}) => {
+                loaderOptions: (sassLoaderOptions, { env, paths }) => {
 
-                    let prepend = "";
+                    sassLoaderOptions.prependData = "@use 'sass:math';\n"
 
                     if (fs.existsSync(process.cwd() + "/src/styles/Global.scss")) {
 
-                        prepend += fs.readFileSync(process.cwd() + "/src/styles/Global.scss");
+                        sassLoaderOptions.prependData += `@import "${(process.cwd() + "/src/styles/Global.scss").replace(/\\/g, "/")}"; \n\n `;
+
+                        // sassLoaderOptions.prependData += fs.readFileSync(process.cwd() + "/src/styles/Global.scss");
 
                     }
-
-                    sassLoaderOptions.prependData = prepend;
 
                     return sassLoaderOptions;
 

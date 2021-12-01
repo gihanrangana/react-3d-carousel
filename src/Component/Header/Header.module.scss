@@ -1,0 +1,32 @@
+.header {
+    background: $primary;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 20px;
+
+    & .navContainer {
+        display: flex;
+        gap: 10px;
+
+        & .navItem {
+            @include headingText("heading", 500, "medium", (color:$light0));
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: rgba($color: $dark4, $alpha: .5);
+            border-radius: 5px;
+
+            &.active {
+                background-color: rgba($color: $dark0, $alpha: .6);
+                color: $primary;
+            }
+
+            &:hover:not(.active) {
+                color: $secondary;
+            }
+        }
+    }
+}

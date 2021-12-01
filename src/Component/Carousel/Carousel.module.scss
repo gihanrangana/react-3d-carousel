@@ -25,6 +25,14 @@
     z-index: 0;
     transition: all 0.5s ease-in-out;
     transform: scale(0);
+
+    @media #{$tablet-portrait-down} {
+        max-width: 350px;
+    }
+
+    @media #{$mobile-only} {
+        max-width: 320px;
+    }
 }
 
 .slideContent {
@@ -42,11 +50,23 @@
     transform: scale(1) translateX(0);
 }
 
+.slideImage {
+    width: 100%;
+}
+
 .next {
     position: absolute;
     visibility: visible;
     opacity: .7;
     transform: scale(0.8) translateX(80%);
+
+    @media #{$tablet-landscape-down} {
+        transform: scale(0.8) translateX(40%);
+    }
+
+    @media #{$mobile-only} {
+        transform: scale(0.8) translateX(25%);
+    }
 }
 
 .prev {
@@ -54,6 +74,14 @@
     visibility: visible;
     opacity: .7;
     transform: scale(0.8) translateX(-80%);
+
+    @media #{$tablet-landscape-down} {
+        transform: scale(0.8) translateX(-40%);
+    }
+
+    @media #{$mobile-only} {
+        transform: scale(0.8) translateX(-25%);
+    }
 }
 
 .button {
@@ -62,21 +90,42 @@
     cursor: pointer;
     margin: 0 .5rem;
     color: $light0;
+    z-index: 5;
+    transform: translateY(50%);
 
     .icon {
         color: $dark1;
-        font-size: 4.8rem;
+        font-size: 48px;
+
     }
 
     &.btnPrev {
         position: absolute;
-        left: 2rem;
+        left: 20px;
         margin: auto;
+
+        @media #{$mobile-only} {
+            left: 0;
+        }
     }
 
     &.btnNext {
         position: absolute;
-        right: 2rem;
+        right: 20px;
         margin: auto;
+        @media #{$mobile-only} {
+            right: 0;
+        }
     }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
 }

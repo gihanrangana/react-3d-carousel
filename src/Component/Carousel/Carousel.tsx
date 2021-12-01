@@ -6,7 +6,9 @@ import styles from './Carousel.module.scss'
 
 const Carousel: React.FC<CarouselProps> = (props) => {
 
-    const { slides, renderContent, classes, buttons }: any = props;
+    let { slides, renderContent, classes, buttons, type }: any = props;
+
+    if (!type) type = 'image';
 
     const [activeSlide, setActiveSlide] = React.useState(8);
 
@@ -77,9 +79,11 @@ const Carousel: React.FC<CarouselProps> = (props) => {
     }, [props.auto])
 
     return (
-        <div className={styles.wrapper}>
+        <div className={[styles.wrapper, classes?.wrapper].join(' ')}>
 
-            <div ref={slideRef} className={[styles.sliderContainer, classes?.container].join(' ')}>
+            <div className={[styles.sliderContainer, classes?.container].join(' ')}>
+
+                <div ref={slideRef} className={styles.overlay} />
 
                 {slides && slides.map((slide: any, index: number) => {
 
@@ -106,7 +110,9 @@ const Carousel: React.FC<CarouselProps> = (props) => {
                                 isNext: isNext(index, activeSlide)
                             })}
 
-                            {!renderContent && <p>You should need to pass the `renderContent` function with your custom component</p>}
+                            {type && type === 'images' && <img src={slide.url} alt={slide.alt} className={styles.slideImage} />}
+
+                            {!renderContent && !type && <p>You should need to pass the `renderContent` function with your custom component</p>}
 
                         </div>
 
@@ -148,12 +154,14 @@ const Carousel: React.FC<CarouselProps> = (props) => {
 type Classes = {
     container?: string,
     slide?: string,
+    wrapper?: string,
 }
 
 interface CarouselProps {
     slides: Array<object>
     renderContent?: (props: any) => JSX.Element
     classes?: Classes
+    type?: "images" | "content"
     [key: string]: any
 }
 

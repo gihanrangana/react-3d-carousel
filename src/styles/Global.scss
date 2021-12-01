@@ -5,11 +5,23 @@
 
 /* color variables */
 $primary: #4d73f0;
-$secondary: #8a9a5a;
+$secondary: #b0eb26;
 
 $bodyBg:#222222;
 
 $white: #ffffff;
+
+$light0:#ffffff;
+$light1:#f5f5f5;
+$light2:#e5e5e5;
+$light3:#d5d5d5;
+$light4:#c5c5c5;
+
+$dark0:#000000;
+$dark1:#111111;
+$dark2:#222222;
+$dark3:#333333;
+$dark4:#444444;
 
 /* Fonts varaibles */
 $fonts: (
@@ -68,12 +80,22 @@ $fontSize: (
 }
 
 /* breakpoints */
-$mobile-devices: "(max-width:599px)";
-$tab-portrait-up: "(min-width:600px)";
-$tab-portrait-only: "(min-width:600px) and (max-width:960px)";
-$tab-landscape-up: "(min-width:960px)";
-$tab-landscape-only: "(min-width:960px) and (max-width:1200px)";
-$lap-up: "(min-width:1200px)";
-$lap-only: "(min-width:1200px) and (max-width:1660px)";
-$desktop: "(min-width:1660px)";
-$high-res-devices: "(min-width:2560px)";
+$mobile-only: '(max-width: 600px)';
+
+$tablet-portrait-up: '(min-width:600px)';
+$tablet-portrait-only: '(min-width:600px) and (max-width:960px)';
+$tablet-portrait-down: '(max-width:959px)';
+
+$tablet-landscape-up: '(min-width:960px)';
+$tablet-landscape-only: '(min-width:960px) and (max-width:1200px)';
+$tablet-landscape-down: '(max-width:1199px)';
+
+$laptop-up: '(min-width:1200px)';
+$laptop-only: '(min-width:1200px) and (max-width:1660px)';
+$laptop-down: '(max-width:1659px)';
+
+$desktop-up: '(min-width:1660px)';
+$desktop-only: '(min-width:1660px)';
+$desktop-down: '(max-width:2559px)';
+
+$highres-up: '(min-width:2560px)';

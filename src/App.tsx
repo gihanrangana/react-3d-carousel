@@ -1,15 +1,21 @@
 import React from 'react';
+import { SliderTypes } from './types';
 
 import styles from './App.module.scss';
+import Header from './Component/Header/Header';
+import ImageSlider from './Examples/ImageSlider/ImageSlider';
 
 export default function App() {
+
+    const [activeSlider, setActiveSlider] = React.useState(SliderTypes.SLIDER_CONTENT);
 
     return (
         <div className={styles.container}>
 
-            <img src={require('./assets/images/logo.png')} alt="logo" className={styles.logo}/>
-            <p className={styles.text}>This app created with create-sass-react-app.</p>
-            
+            <Header setActiveSlider={setActiveSlider} active={activeSlider} />
+
+            <ImageSlider />
+
         </div>
     )
 }
