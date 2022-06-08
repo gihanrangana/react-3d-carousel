@@ -74,9 +74,11 @@ const Carousel: React.FC<CarouselProps> = (props) => {
     useEffect(() => {
         if (!props.auto || !props.speed) return;
 
-        setInterval(() => handleNext(), props.speed);
+        const timer = setTimeout(() => handleNext(), props.speed);
 
-    }, [props.auto])
+        return () => clearTimeout(timer);
+
+    }, [props.auto,activeSlide])
 
     return (
         <div className={[styles.wrapper, classes?.wrapper].join(' ')}>
